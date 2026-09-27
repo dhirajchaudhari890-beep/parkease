@@ -50,6 +50,7 @@ function findSlot(slotId) {
   return slots.find((s) => s.slotId === slotId);
 }
 
+/// Calculates parking fee: Rs 20 flat for the first hour, then Rs 10 for each additional hour (rounded up)
 function calculateParkingFee(entryTime) {
   const now = Date.now();
   const elapsedMs = now - new Date(entryTime).getTime();
