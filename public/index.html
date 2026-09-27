@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParkEase - Smart Parking Management</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-brand">🅿️ ParkEase</div>
+    <div class="navbar-tagline">Smart Parking Management System</div>
+  </header>
+
+  <main class="container">
+
+    <section id="notification" class="notification hidden"></section>
+
+    <section class="dashboard">
+      <h2>Parking Dashboard</h2>
+      <div class="dashboard-cards">
+        <div class="card">
+          <span class="card-value" id="total-slots">0</span>
+          <span class="card-label">Total Slots</span>
+        </div>
+        <div class="card card-available">
+          <span class="card-value" id="available-slots">0</span>
+          <span class="card-label">Available</span>
+        </div>
+        <div class="card card-occupied">
+          <span class="card-value" id="occupied-slots">0</span>
+          <span class="card-label">Occupied</span>
+        </div>
+        <div class="card">
+          <span class="card-value" id="active-vehicles">0</span>
+          <span class="card-label">Active Vehicles</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section">
+      <h2>Book a Parking Slot</h2>
+      <form id="booking-form">
+        <div class="form-row">
+          <label for="userName">Name</label>
+          <input type="text" id="userName" placeholder="Enter your name" required />
+        </div>
+        <div class="form-row">
+          <label for="vehicleNumber">Vehicle Number</label>
+          <input type="text" id="vehicleNumber" placeholder="e.g. MH15AB1234" required />
+        </div>
+        <div class="form-row">
+          <label for="slotId">Parking Slot</label>
+          <select id="slotId" required>
+            <option value="">Select an available slot</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Slot</button>
+      </form>
+    </section>
+
+    <section class="slots-section">
+      <h2>Parking Slots</h2>
+      <div class="slots-grid" id="slots-grid">
+        <!-- Slot cards inserted here by script.js -->
+      </div>
+    </section>
+
+    <section class="bookings-section">
+      <h2>Active Bookings</h2>
+      <table class="bookings-table" id="bookings-table">
+        <thead>
+          <tr>
+            <th>Slot</th>
+            <th>Booking ID</th>
+            <th>Name</th>
+            <th>Vehicle</th>
+            <th>Entry Time</th>
+            <th>Est. Fee (₹)</th>
+          </tr>
+        </thead>
+        <tbody id="bookings-body">
+          <!-- Rows inserted here by script.js -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    ParkEase &copy; 2026 | Commit: <span id="commit-id">loading...</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
