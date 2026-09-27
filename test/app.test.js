@@ -91,5 +91,5 @@ test('GET /api/slots returns an array of 12 slots', async () => {
 
   assert.strictEqual(res.status, 200);
   assert.strictEqual(Array.isArray(data), true);
-  assert.strictEqual(data.length, 99);
+  assert.strictEqual(data.length, 12);
 });
